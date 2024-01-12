@@ -18,9 +18,7 @@ class Solution {
         if(root == null){
             return root;
         }
-        System.out.println("");
         System.out.print(root.val);
-        System.out.println("");
 
         invertTree(root.left);
         
