@@ -1,0 +1,25 @@
+class Solution {
+
+    public void swap(int temp1, int temp2, int[] arr){
+        int temp = arr[temp1];
+        arr[temp1] = arr[temp2];
+        arr[temp2] = temp;
+    }
+   
+    public void sortColors(int[] nums) {
+        int low = 0, mid = 0, high = nums.length - 1;
+
+        while(mid <= high){
+            if(nums[mid] == 0){
+                swap(low,mid,nums);
+                low++;
+                mid++;
+            } else if (nums[mid] == 1){
+                mid++;
+            } else {
+                swap(mid,high, nums);
+                high--;
+            }
+        }
+    }
+}
