@@ -1,0 +1,16 @@
+class Solution {
+    public int kthSmallest(TreeNode root, int k) {
+        List<Integer> traversedArray = new ArrayList<>();
+        inorder(root,traversedArray);
+        int result = traversedArray.get(k-1);
+        return result;
+    }
+
+    public void inorder(TreeNode root, List traversedArray){
+        if(root == null) return;
+
+        inorder(root.left, traversedArray);
+        traversedArray.add(root.val);
+        inorder(root.right,traversedArray);
+    }
+}
